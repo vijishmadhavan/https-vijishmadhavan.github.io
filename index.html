@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script>
+      async function makeApiCall() {
+        const response = await fetch("https://ramzvon-talk-ii.hf.space/run/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: [
+              "Upload",
+              "Yes",
+              "Man",
+              "anime On",
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==",
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==",
+              "auto",
+              {"name":"zip.zip","data":"data:@file/octet-stream;base64,UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA=="},
+              "hello world",
+              "hi",
+            ]
+          })
+        });
+        const data = await response.json();
+        console.log(data);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="makeApiCall()">Make API Call</button>
+  </body>
+</html>
